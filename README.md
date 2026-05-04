@@ -1,6 +1,6 @@
 # OmniProact-Bench
 
-**A Comprehensive Benchmark for Proactive Streaming Video Understanding**
+**A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding**
 
 OmniProact-Bench evaluates multimodal models on their ability to proactively interact with streaming video — detecting events, monitoring states, counting objects, and providing timely narrations without explicit user queries at each moment.
 
