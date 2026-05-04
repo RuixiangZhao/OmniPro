@@ -1,0 +1,11 @@
+torch>=2.0
+torchvision
+transformers>=4.37
+peft
+decord
+Pillow
+numpy
+tqdm
+flash-attn
+accelerate
+safetensors
