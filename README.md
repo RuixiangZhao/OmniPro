@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://omniproact-bench.github.io/OmniProact-Bench/"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
-  <a href="https://huggingface.co/datasets/omniproact-bench-neurips26/omniproact-bench/"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/omniproact-bench/omniproact-bench/"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
 </p>
 
@@ -102,7 +102,7 @@ Clone the data repository (videos + metadata) into the `data/` directory:
 ```bash
 # Clone the benchmark data (videos, annotations)
 cd data
-git clone https://huggingface.co/datasets/omniproact-bench-neurips26/omniproact-bench .
+git clone https://huggingface.co/datasets/omniproact-bench/omniproact-bench .
 cd ..
 ```
 
