@@ -2,6 +2,9 @@
 
 **A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding**
 
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://omniproact-bench.github.io/OmniProact-Bench/)
+[![Dataset](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/omniproact-bench-neurips26/omniproact-bench/)
+
 OmniProact-Bench evaluates multimodal models on their ability to proactively interact with streaming video — detecting events, monitoring states, counting objects, and providing timely narrations without explicit user queries at each moment.
 
 ## 📋 Overview
