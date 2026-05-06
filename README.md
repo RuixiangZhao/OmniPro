@@ -1,32 +1,32 @@
-# OmniProact-Bench
+# OmniPro
 
 **A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding**
 
 <p align="center">
-  <a href="https://omniproact-bench.github.io/OmniProact-Bench/"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
-  <a href="https://huggingface.co/datasets/omniproact-bench/omniproact-bench/"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
+  <a href="https://omnipro26.github.io/OmniPro/"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
+  <a href="https://huggingface.co/datasets/omniproact-bench/OmniPro"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
 </p>
 
-OmniProact-Bench evaluates multimodal models on their ability to proactively interact with streaming video — detecting events, monitoring states, counting objects, and providing timely narrations without explicit user queries at each moment.
+OmniPro evaluates multimodal models on their ability to proactively interact with streaming video — detecting events, monitoring states, counting objects, and providing timely narrations without explicit user queries at each moment.
 
 ## 📋 Overview
 
-OmniProact-Bench consists of **9 evaluation tasks** across two modes:
+OmniPro consists of **9 evaluation tasks** across two modes:
 
 ### Tasks
 
-| Task                        | Abbr. | Type        | Description                       |
-| --------------------------- | ----- | ----------- | --------------------------------- |
-| Instant Event Alert         | IEA   | Alert       | Detect and report specific events |
-| Semantic Condition Alert    | SCA   | Alert       | Monitor for semantic conditions   |
-| Explicit Target Grounding   | ETG   | Grounding   | Locate targets when events occur  |
-| Snapshot Counting           | SC    | Counting    | Count objects at trigger moments  |
-| Cumulative Counting         | CC    | Counting    | Track cumulative event counts     |
-| Dedup Counting              | DC    | Counting    | Count unique instances            |
-| Realtime State Monitor      | RSM   | Monitor     | Track state changes               |
-| Event Narration             | EN    | Narration   | Narrate events as they happen     |
-| Sequential Step Instruction | SSI   | Instruction | Guide through procedures          |
+| Task                        | Abbr.         | Type        | Description                       |
+| --------------------------- | ------------- | ----------- | --------------------------------- |
+| Instant Event Alert         | Event-Alert   | Alert       | Detect and report specific events |
+| Semantic Condition Alert    | Cond.-Alert   | Alert       | Monitor for semantic conditions   |
+| Explicit Target Grounding   | Target-Ground | Grounding   | Locate targets when events occur  |
+| Snapshot Counting           | Snap.-Count   | Counting    | Count objects at trigger moments  |
+| Cumulative Counting         | Cum.-Count    | Counting    | Track cumulative event counts     |
+| Dedup Counting              | Dedup.-Count  | Counting    | Count unique instances            |
+| Realtime State Monitor      | State-Monitor | Monitor     | Track state changes               |
+| Event Narration             | Event-Narr.   | Narration   | Narrate events as they happen     |
+| Sequential Step Instruction | Step-Inst.    | Instruction | Guide through procedures          |
 
 ### Evaluation Modes
 
@@ -36,7 +36,7 @@ OmniProact-Bench consists of **9 evaluation tasks** across two modes:
 ## 🏗️ Project Structure
 
 ```
-OmniProact-Bench/
+OmniPro/
 ├── models/                 # Model adapters (probe + streaming)
 │   ├── base.py            # BaseModel abstract class
 │   ├── streaming_base.py  # StreamingModel abstract class
@@ -87,7 +87,7 @@ OmniProact-Bench/
 ```bash
 # Clone the repository
 git clone <repo_url>
-cd OmniProact-Bench
+cd OmniPro
 
 # Install base dependencies
 pip install -r requirements.txt
@@ -102,7 +102,7 @@ Clone the data repository (videos + metadata) into the `data/` directory:
 ```bash
 # Clone the benchmark data (videos, annotations)
 cd data
-git clone https://huggingface.co/datasets/omniproact-bench/omniproact-bench .
+git clone https://huggingface.co/datasets/omniproact-bench/OmniPro .
 cd ..
 ```
 
@@ -209,8 +209,8 @@ python scripts/compute_online_metrics.py --pred_dir results/online/MiniCPM-o-4.5
 ## 📝 Citation
 
 ```bibtex
-@inproceedings{omniproactbench2026,
-  title={OmniProact-Bench: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding},
+@inproceedings{omnipro2026,
+  title={OmniPro: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding},
   author={Anonymous},
   year={2026}
 }
