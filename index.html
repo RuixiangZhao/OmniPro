@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="OmniPro: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniPro</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">OmniPro</h1>
+          <h2 class="subtitle is-4" style="margin-top:-0.5rem;">A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding</h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+
+          <!-- Buttons with icons -->
+          <div class="column has-text-centered" style="margin-top:1.2rem;">
+            <div class="publication-links">
+              <!-- Paper button (uncomment when available)
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" style="pointer-events:none; opacity:0.6;">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>Paper (Coming Soon)</span>
+                </a>
+              </span>
+              -->
+              <span class="link-block">
+                <a href="https://anonymous.4open.science/r/OmniPro-5031" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fa-brands fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/omniproact-bench/OmniPro" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🤗</span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/omniproact-bench/OmniPro_subset" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">🤗</span>
+                  <span>Dataset Subset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top:0;">
+      <img src="./static/images/benchmark.png" alt="OmniPro Overview" width="100%" style="border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+      <p class="has-text-centered" style="margin-top:0.8rem; font-size:0.95rem; color:#666;">
+        <b>Figure 1.</b> OmniPro: 9 sub-tasks × 3 cognitive levels × 6 capabilities, with 84% audio dependency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p><b>Omni-proactive streaming video understanding</b>, i.e., autonomously deciding when to speak and what to say from continuous audio-visual streams, is an emerging capability of omni-modal large language models. Existing benchmarks fall short in three key aspects: they rely primarily on visual signals, adopt polling or fixed-timestamp protocols instead of true proactive evaluation, and cover only a limited range of tasks, preventing reliable assessment and differentiation of omni-proactive streaming models.</p>
+          <p>We present <b>OmniPro</b>, the first benchmark to jointly evaluate omni-modal perception, proactive responding, and diverse video understanding tasks. It comprises <b>2,700 human-verified samples</b> spanning 9 sub-tasks and 3 cognitive levels, covering 6 basic video understanding capabilities. Notably, <b>84% of samples require audio signals</b> (speech or non-speech), and each sample is annotated with modality-isolation labels to enable fine-grained multimodal analysis.</p>
+          <p>We further introduce a dual-mode evaluation protocol: <em>Probe</em> mode assesses content understanding by querying the model before and after each ground-truth trigger, while <em>Online</em> mode evaluates full proactive ability by requiring models to autonomously decide when to respond in streaming input.</p>
+          <p>Evaluating 11 representative models reveals three key findings: (1) audio provides consistent gains but with highly variable utilization across models, (2) performance degrades significantly over time, indicating limited long-horizon robustness, and (3) non-speech audio perception remains the weakest dimension.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features -->
+<section class="section" style="background-color:#f8f9fa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Features</h2>
+    <div class="columns is-multiline" style="margin-top:1.5rem;">
+      <div class="column is-4">
+        <div class="box has-text-centered" style="height:100%;">
+          <span class="icon is-large" style="color:#2B7BE8;"><i class="fas fa-headphones fa-2x"></i></span>
+          <h3 class="title is-5" style="margin-top:0.75rem;">Omni-Modal</h3>
+          <p>84% audio dependency with modality-isolation labels for fine-grained analysis.</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="box has-text-centered" style="height:100%;">
+          <span class="icon is-large" style="color:#E86330;"><i class="fas fa-clock fa-2x"></i></span>
+          <h3 class="title is-5" style="margin-top:0.75rem;">Proactive Responding</h3>
+          <p>Models decide <em>when</em> to speak with multi-trigger support and over-trigger penalties.</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="box has-text-centered" style="height:100%;">
+          <span class="icon is-large" style="color:#2EAD4B;"><i class="fas fa-tasks fa-2x"></i></span>
+          <h3 class="title is-5" style="margin-top:0.75rem;">Diverse Tasks</h3>
+          <p>9 sub-tasks covering Alert, Monitoring, Grounding, Counting, Narration, Prediction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Visualization (Carousel) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Sample Visualization</h2>
+    <p class="has-text-centered" style="margin-bottom:1rem; color:#666;">Use the arrows to browse examples from each sub-task. Each sample shows the video, user instruction, and ground-truth proactive responses.</p>
+
+    <div id="carousel-container" style="position:relative; overflow:visible;">
+      <!-- Carousel controls -->
+      <button id="prev-btn" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:1.4rem;">&#10094;</button>
+      <button id="next-btn" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:1.4rem;">&#10095;</button>
+
+      <!-- Slides -->
+      <!-- Slides -->
+      <div class="carousel-slide" data-index="0">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/VkVB9hsAf3g.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Event-Alert</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Let me know if you hear the sound of pots and pans clinking in the kitchen.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:13</span> <span class="tag is-warning">sound</span><br>"She's rummaging through the cabinets now — I hear the pots clinking."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="1" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/ntbmuiuta_8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">State-Monitor</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Monitor the audio and let me know whenever the narrator starts or stops speaking.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:10</span> <span class="tag is-link is-light">speech</span><br>"The narrator started speaking — changed from music only to speech."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">01:15</span> <span class="tag is-link is-light">speech</span><br>"The narrator stopped speaking — changed from speech back to music only."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">01:30</span> <span class="tag is-link is-light">speech</span><br>"The narrator resumed speaking — changed from music only to speech."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="2" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/7GkZ7PLMaZk.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Snap.-Count</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>When the speaker says he will pronounce the word slower, count how many letters are in the word on the screen.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:34</span> <span class="tag is-primary is-light">visual+speech</span><br>"He's speaking slower now — I count 8 letters in the word."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="3" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/L1q4J7oNswA.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Target-Ground</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>The first time you hear the sound of a bell ringing, tell me where the bell is in the frame.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:10</span> <span class="tag is-warning">visual+sound</span><br>"The bell just rang—it is located in the top-center of the frame."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="4" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/U_yDpCSi0bQ.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Cond.-Alert</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Alert me whenever one of the children makes a dismissive or negative comment about an idea or suggestion shared by someone else.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:08</span> <span class="tag is-link is-light">speech</span><br>"A boy just dismissed a friend's suggestion about an NBA scout by calling it 'dumb'."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:27</span> <span class="tag is-link is-light">speech</span><br>"A boy criticized the name 'Fred' by calling it a 'total wrinkle-up geezer name'."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:32</span> <span class="tag is-link is-light">speech</span><br>"A boy just insulted a name suggestion, calling 'Bob' a 'lame name'."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="5" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/osvkHQdxULg.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Cum.-Count</span> <span class="tag is-danger">🎧 Audio Required</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Count how many times the word 'Devoxx' is spoken throughout the video.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:21</span> <span class="tag is-link is-light">speech</span><br>"Yakov Fain just mentioned Devoxx for the first time while describing the conference tracks."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:37</span> <span class="tag is-link is-light">speech</span><br>"Baruch Sadogursky just said Devoxx while discussing the high quality of the speakers."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:52</span> <span class="tag is-link is-light">speech</span><br>"Yury Antoniuk just mentioned Devoxx, calling it a great engineering conference in Ukraine."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">01:42</span> <span class="tag is-link is-light">speech</span><br>"Stephan Janssen mentioned Devoxx once more, comparing the event to a rock concert."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="6" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/DxxMPyeBLvc.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Event-Narr.</span> <span class="tag is-warning">🔊 Audio Helpful</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Narrate the progression of Kenneth's prank, from his transformation to his performance at the outdoor gym.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:45</span> <span class="tag is-primary is-light">visual+speech</span><br>"Kenneth, an athlete, is undergoing a transformation into an elderly man. Makeup artists are applying latex prosthetics and airbrushing wrinkles while he describes the tight sensation of the bald cap."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">01:40</span> <span class="tag is-primary is-light">visual+speech</span><br>"Now fully disguised, Kenneth is at Muscle Beach. After joking about using prune juice as a supplement, he is approaching a group of lifters to ask if he can try their heavy weights."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">02:20</span> <span class="tag is-warning">visual+sound</span><br>"After pretending to struggle, Kenneth shocked onlookers by cleaning and jerking the heavy weight with ease. He is currently performing deep squats and overhead lifts while the crowd cheers and records his performance."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">03:15</span> <span class="tag is-warning">visual+sound</span><br>"Kenneth matched a younger lifter's heavy lifts, drawing a large crowd. He is now performing a perfect handstand on the ground while onlookers cheer and capture the moment on their phones."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">03:35</span> <span class="tag is-primary is-light">visual+speech</span><br>"Kenneth is high-fiving the other lifters and waving to the audience. He is currently sharing a message about staying strong every day as he prepares to leave the beach area."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="7" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/XhgUbBVXLEg.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Dedup.-Count</span> <span class="tag is-warning">🔊 Audio Helpful</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>Count how many different people are interviewed and speak on camera in this video.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:18</span> <span class="tag is-primary is-light">visual+speech</span><br>"First interviewee — Marwan Farah, a resident engineer, begins speaking about the project's goals."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:24</span> <span class="tag is-primary is-light">visual+speech</span><br>"Second interviewee — Heather Pehrson from the city council shares her perspective on community transportation."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:45</span> <span class="tag is-primary is-light">visual+speech</span><br>"Third interviewee — Utah State Senator Howard Stephenson speaks at a podium praising the project."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-index="8" style="display:none;">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <video controls width="100%" style="border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+              <source src="https://huggingface.co/datasets/omniproact-bench/OmniPro/resolve/main/raw_videos/nh1GBPeyyMo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-7">
+            <span class="tag is-info">Step-Inst.</span> <span class="tag is-warning">🔊 Audio Helpful</span>
+            <p style="margin-top:0.8rem;"><b>Q:</b> <em>I'm following along to wrap a gift like this. Please guide me through each step as it happens.</em></p>
+            <div style="margin-top:0.5rem; padding:0.8rem; background:#f9f9f9; border-radius:6px; border-left:3px solid #2B7BE8;">
+              <p><span class="tag is-dark" style="margin-right:4px;">00:08</span> <span class="tag is-success is-light">visual</span><br>"Place the box on your cut paper. Wrap the paper tightly around the box and secure the seam with a piece of clear tape."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:15</span> <span class="tag is-success is-light">visual</span><br>"Fold the paper over the ends of the box, creating neat triangular folds. Secure each side with tape to fully encase the box."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:32</span> <span class="tag is-success is-light">visual</span><br>"Pull out a long section of gold ribbon, measure it against the box to ensure it's long enough, and cut it with your scissors."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:44</span> <span class="tag is-success is-light">visual</span><br>"Wrap the gold ribbon around the box, crossing it at the bottom and bringing the ends back to the top to prepare for the bow."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">00:59</span> <span class="tag is-success is-light">visual</span><br>"Tie an initial knot on top. Begin forming multiple loops with the gold ribbon, holding the center firmly with your thumb as you go."</p>
+              <p style="margin-top:0.4rem;"><span class="tag is-dark" style="margin-right:4px;">01:45</span> <span class="tag is-success is-light">visual</span><br>"Tie a final knot to secure the bow. Use your scissors to trim the excess ribbon ends at a sharp angle for a professional look."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicator dots -->
+      <div class="has-text-centered" style="margin-top:1rem;">
+        <span class="carousel-dot active" data-index="0"></span>
+        <span class="carousel-dot" data-index="1"></span>
+        <span class="carousel-dot" data-index="2"></span>
+        <span class="carousel-dot" data-index="3"></span>
+        <span class="carousel-dot" data-index="4"></span>
+        <span class="carousel-dot" data-index="5"></span>
+        <span class="carousel-dot" data-index="6"></span>
+        <span class="carousel-dot" data-index="7"></span>
+        <span class="carousel-dot" data-index="8"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dataset Statistics -->
+<section class="section" style="background-color:#f8f9fa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dataset Statistics</h2>
+    <div class="columns is-centered is-vcentered" style="margin-top:1.5rem;">
+      <div class="column is-3 has-text-centered">
+        <h4 class="title is-6">Audio Dependency</h4>
+        <img src="./static/images/audio_dependency_per_task.png" alt="Audio dependency" width="100%">
+      </div>
+      <div class="column is-3 has-text-centered">
+        <h4 class="title is-6">Trigger Modality</h4>
+        <img src="./static/images/trigger_modality_composition.png" alt="Trigger modality" width="100%">
+      </div>
+      <div class="column is-3 has-text-centered">
+        <h4 class="title is-6">Trigger Word Cloud</h4>
+        <img src="./static/images/trigger_event_wordcloud.png" alt="Word cloud" width="100%">
+      </div>
+      <div class="column is-3 has-text-centered">
+        <h4 class="title is-6">Trigger Time</h4>
+        <img src="./static/images/trigger_time_distribution.png" alt="Trigger time" width="100%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experimental Analysis -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Experimental Analysis</h2>
+    <div class="columns is-centered is-vcentered" style="margin-top:1.5rem; align-items:stretch;">
+      <div class="column is-6 has-text-centered" style="display:flex; flex-direction:column; justify-content:center;">
+        <h4 class="title is-6">Temporal Position Ablation</h4>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <img src="./static/images/temporal_position_ablation.png" alt="Temporal ablation" style="width:100%;">
+        </div>
+      </div>
+      <div class="column is-5 has-text-centered" style="display:flex; flex-direction:column; justify-content:center;">
+        <h4 class="title is-6">Trigger Modality Radar</h4>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <img src="./static/images/trigger_modality_radar.png" alt="Radar" style="width:85%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Findings -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Findings</h2>
+    <div class="content" style="max-width:800px; margin:1.5rem auto 0;">
+      <ul style="font-size:1.05rem; line-height:1.9;">
+        <li><b>Proprietary vs. open-source gap:</b> Gemini-3-Flash achieves 40.4% accuracy, nearly double the best open-source model (22.6%), with the largest gap on reasoning-level tasks.</li>
+        <li><b>Divergent modality utilization:</b> Audio and video provide complementary cues (A+V gains range from +2.4 to +11.1), yet models exhibit divergent patterns—some rely on audio, others on vision.</li>
+        <li><b>Long-horizon degradation:</b> All models struggle to perceive events occurring late in videos, retaining only 37% of early-segment performance at 180s+.</li>
+        <li><b>Non-speech sound is the weakest link:</b> All models perform worst on visual+sound triggers (15.3–22.3%), revealing a shared bottleneck.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" style="background-color:#f8f9fa;" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre style="border-radius:8px; padding:1.2rem; background:#2d2d2d; color:#f8f8f2; font-size:0.85rem;"><code>@inproceedings{omnipro2026,
+  title={OmniPro: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding},
+  author={Anonymous},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" style="padding:1.5rem 0;">
+  <div class="container">
+    <div class="content has-text-centered" style="color:#aaa; font-size:0.85rem;">
+      <p>Template adapted from <a href="https://nerfies.github.io/" style="color:#888;">Nerfies</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Carousel JS -->
+<script>
+(function() {
+  let current = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const total = slides.length;
+
+  function show(idx) {
+    slides.forEach(s => s.style.display = 'none');
+    dots.forEach(d => d.classList.remove('active'));
+    slides[idx].style.display = 'block';
+    dots[idx].classList.add('active');
+    current = idx;
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => show((current - 1 + total) % total));
+  document.getElementById('next-btn').addEventListener('click', () => show((current + 1) % total));
+  dots.forEach(d => d.addEventListener('click', () => show(parseInt(d.dataset.index))));
+})();
+</script>
+
+</body>
+</html>
