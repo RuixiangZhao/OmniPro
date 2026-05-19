@@ -3,7 +3,7 @@
 **A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding**
 
 <p align="center">
-  <a href="[https://arxiv.org/abs/2605.18577"><img src="https://img.shields.io/static/v1?label=arXiv&message=Paper&color=red&logo=arxiv"></a>
+  <a href="https://arxiv.org/abs/2605.18577"><img src="https://img.shields.io/static/v1?label=arXiv&message=Paper&color=red&logo=arxiv"></a>
   <a href="https://ruixiangzhao.github.io/OmniPro/"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
   <a href="https://huggingface.co/datasets/omniproact-bench/OmniPro"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
