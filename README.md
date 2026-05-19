@@ -213,7 +213,7 @@ python scripts/compute_online_metrics.py --pred_dir results/online/MiniCPM-o-4.5
 @article{omnipro2026,
   title={OmniPro: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding},
   author={Zhao, Ruixiang and Yang, Jie and Xin, Zijie and Wang, Tianyi and Rao, Fengyun and LYU, Jing and Li, Xirong},
-  journal={arXiv preprint arXiv:2603.12938},
+  journal={arXiv preprint arXiv:2605.18577},
   year={2026}
 }
 ```
