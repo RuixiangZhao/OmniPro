@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2605.18577"><img src="https://img.shields.io/static/v1?label=arXiv&message=Paper&color=red&logo=arxiv"></a>
   <a href="https://ruixiangzhao.github.io/OmniPro/"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
-  <a href="https://huggingface.co/datasets/omniproact-bench/OmniPro"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/RuixiangZhao/OmniPro"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow" alt="Dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
 </p>
 
@@ -87,7 +87,7 @@ OmniPro/
 
 ```bash
 # Clone the repository
-git clone <repo_url>
+git clone https://github.com/RuixiangZhao/OmniPro
 cd OmniPro
 
 # Install base dependencies
@@ -103,7 +103,7 @@ Clone the data repository (videos + metadata) into the `data/` directory:
 ```bash
 # Clone the benchmark data (videos, annotations)
 cd data
-git clone https://huggingface.co/datasets/omniproact-bench/OmniPro .
+git clone https://huggingface.co/datasets/RuixiangZhao/OmniPro .
 cd ..
 ```
 
